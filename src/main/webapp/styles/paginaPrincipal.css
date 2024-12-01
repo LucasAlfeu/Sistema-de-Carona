@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    color: #0F3B8C;
+    background-color: #eee;
+}
+
+header {
+    background-color: #0F3B8C;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li a{
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main h1{
+    font-size: 3rem;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-button{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.box-button button{
+    background-color: #0F3B8C;
+    color: white;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 120px;
+}
+
+.search-form input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 1.2rem;
+    margin: 1.25rem 0.75rem;
+}
+
+.caronas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f6f6f6;
+    width: 847px;
+}
+
+.carona-card {
+    margin: 20px;
+    padding: 0 20px 20px 20px;
+    border: 1px solid #0F3B8C;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
+    color: #000;
+    width: 200px;
+    text-align: left;
+    background-color: #fff;
+}
