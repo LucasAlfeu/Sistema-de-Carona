@@ -4,12 +4,11 @@ USE sistema_de_carona;
 
 CREATE TABLE IF NOT EXISTS Usuario (
     ID_usuario INT PRIMARY KEY AUTO_INCREMENT,
-    usuario VARCHAR(50) NOT NULL,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     nome VARCHAR(100) NOT NULL,
     cpf CHAR(11) NOT NULL UNIQUE,
-    cnh VARCHAR(20) UNIQUE,
-    Usuario_TIPO VARCHAR(30)
+    telefone VARCHAR(15)
 );
 
 CREATE TABLE IF NOT EXISTS Automovel (

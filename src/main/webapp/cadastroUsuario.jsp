@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Cadastrar</h1>
-        <form>
+        <form action="cadastrarUsuario.do" method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
             <label for="usuario">Usuário:</label>
