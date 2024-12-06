@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formul√°rio de Login</title>
+    <title>Formul·rio de Login</title>
     <link rel="stylesheet" href="./styles/entrar.css">
 </head>
 <body>
     <div class="container">
         <h1>Entrar</h1>
         <form>
-            <label for="username">Usu√°rio:</label>
+            <label for="username">Usu·rio:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Senha:</label>
             <input type="password" id="password" name="password" required>
             <div class="box">
-                <a href="cadastroUsuario.html">Cadastrar</a>
+                <a class="link-carona" href="cadastroUsuario.jsp">Cadastrar</a>
                 <button type="submit">Entrar</button>
             </div>
         </form>

@@ -10,22 +10,22 @@
     <header>
         <nav>
             <ul>
-                <li><a href="paginaPrincipal.html">In√≠cio</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="paginaPrincipal.jsp">InÌcio</a></li>
+                <li><a href="perfil.jsp">Perfil</a></li>
+                <li><a href="index.jsp">Sair</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Cadastrar Carona</h1>
         <form>
-            <label class="label-form" for="saida">Sa√≠da:</label>
+            <label class="label-form" for="saida">SaÌda:</label>
             <input type="text" id="saida" name="saida" required>
 
             <label class="label-form" for="chegada">Chegada:</label>
             <input type="text" id="chegada" name="chegada" required>
 
-            <label class="label-form" for="horario">Hor√°rio:</label>
+            <label class="label-form" for="horario">Hor·rio:</label>
             <input type="time" id="horario" name="horario" required>
 
             <label class="label-form" for="valor">Valor:</label>
@@ -34,25 +34,25 @@
             <label class="label-form" for="vagas">Vagas:</label>
             <input type="number" id="vagas" name="vagas" required>
             
-            <label  class="label-form">Selecionar Ve√≠culo:</label>
+            <label  class="label-form">Selecionar VeÌculo:</label>
             <div class="box">
                 <div class="box1">
                     <input type="radio" id="veiculo1" name="veiculo" value="veiculo1" checked>
-                    <label for="veiculo1">Ve√≠culo 1</label>
+                    <label for="veiculo1">VeÌculo 1</label>
                 </div>
                 <div class="box1">
                     <input type="radio" id="veiculo2" name="veiculo" value="veiculo2">
-                    <label for="veiculo1">Ve√≠culo 2</label>
+                    <label for="veiculo1">VeÌculo 2</label>
                 </div>
                 <div class="box1">
                     <input type="radio" id="veiculo3" name="veiculo" value="veiculo3">
-                    <label for="veiculo1">Ve√≠culo 3</label>
+                    <label for="veiculo1">VeÌculo 3</label>
                 </div>
 
             </div>
             <div class="box2">
                 <button type="submit">Cadastrar</button>
-                <a href="paginaPrincipal.html">Cancelar</a>
+                <a href="paginaPrincipal.jsp">Cancelar</a>
             </div>
         </form>
     </main>

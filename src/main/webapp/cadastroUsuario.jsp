@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formul√°rio de Cadastro</title>
+    <title>Formul·rio de Cadastro</title>
     <link rel="stylesheet" href="styles/cadastroUsuario.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <form action="cadastrarUsuario.do" method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-            <label for="usuario">Usu√°rio:</label>
+            <label for="usuario">Usu·rio:</label>
             <input type="text" id="usuario" name="usuario" required>
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
@@ -22,7 +22,7 @@
             <input type="tel" id="telefone" name="telefone" required>
             <div class="box">
                 <button type="submit">Cadastrar</button>
-                <a href="index.html">Cancelar</a>
+                <a href="index.jsp">Cancelar</a>
             </div>
         </form>
     </div>

@@ -10,9 +10,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="paginaPrincipal.html">In√≠cio</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="paginaPrincipal.jsp">In√≠cio</a></li>
+                <li><a href="perfil.jsp">Perfil</a></li>
+                <li><a href="index.jsp">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -20,24 +20,24 @@
         <h1>Detalhes</h1>
         <div class="carona-details">
             <p><strong>Motorista:</strong> Nome do motorista</p>
-            <p><strong>Embarque:</strong> Endere√ßo de embarque</p>
-            <p><strong>Desembarque:</strong> Endere√ßo de desembarque</p>
+            <p><strong>Embarque:</strong> EndereÁo de embarque</p>
+            <p><strong>Desembarque:</strong> EndereÁo de desembarque</p>
             <p><strong>Data da Carona:</strong> data da carona</p>
-            <p><strong>Hor√°rio de Sa√≠da:</strong> 00:00</p>
+            <p><strong>Hor·rio de Sa√≠da:</strong> 00:00</p>
             <p><strong>Contato Motorista:</strong> 00000000-0000</p>
-            <p><strong>N√∫mero de Vagas:</strong> 4</p>
-            <h2>Solicita√ß√µes</h2>
+            <p><strong>N˙mero de Vagas:</strong> 4</p>
+            <h2>SolicitaÁıes</h2>
             <ul class="solicitacoes">
                 <li>
-                    Solicita√ß√£o 01
+                    SolicitaÁ„o 01
                     <button>Aceitar Pedido</button>
                 </li>
                 <li>
-                    Solicita√ß√£o 02
+                    SolicitaÁ„o 02
                     <button>Aceitar Pedido</button>
                 </li>
                 <li>
-                    Solicita√ß√£o 03
+                    SolicitaÁ„o 03
                     <button>Aceitar Pedido</button>
                 </li>
             </ul>

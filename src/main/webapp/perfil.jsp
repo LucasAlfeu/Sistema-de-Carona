@@ -10,16 +10,16 @@
     <header>
         <nav>
             <ul>
-                <li><a href="paginaPrincipal.html">In√≠cio</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="paginaPrincipal.jsp">InÌcio</a></li>
+                <li><a href="perfil.jsp">Perfil</a></li>
+                <li><a href="index.jsp">Sair</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Perfil</h1>
         <div class="box">
-            <p>Nome do Usu√°rio</p>
+            <p>Nome do Usu·rio</p>
             <button class="">Cadastrar Carro</button>
         </div>
         <table>

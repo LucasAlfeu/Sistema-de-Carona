@@ -74,6 +74,17 @@ main h1{
     width: 120px;
 }
 
+.link-carona {
+	background-color: #0F3B8C;
+    color: white;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 120px;
+    text-decoration: none;
+}
+
 .search-form input {
     padding: 10px;
     margin-right: 10px;

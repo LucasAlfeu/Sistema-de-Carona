@@ -10,9 +10,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="paginaPrincipal.html">InÃ­cio</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="paginaPrincipal.jsp">Início</a></li>
+                <li><a href="perfil.jsp">Perfil</a></li>
+                <li><a href="index.jsp">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -26,20 +26,40 @@
                 <input type="number" placeholder="Vagas">
             </div>
             <div class="box-button">
-                <button>Oferecer Carona</button>
+                <a href="cadastrarCarona.jsp">Oferecer Carona</a>
                 <button>Buscar</button>
             </div>
         </div>
         <div class="caronas">
             <div class="carona-card">
                 <h3>Carona</h3>
-                <p>SaÃ­da</p>
+                <p>Saída</p>
                 <p>Chegada</p>
                 <p>Data</p>
                 <p>Horario</p>
-                <p>Vagas DisponÃ­veis</p>
+                <p>Vagas Disponíveis</p>
                 <p>Motorista</p>
-                <a href="detalheCarona.html">Saiba Mais</a>
+                <a href="detalheCarona.jsp">Saiba Mais</a>
+            </div>
+            <div class="carona-card">
+                <h3>Carona</h3>
+                <p>Saída</p>
+                <p>Chegada</p>
+                <p>Data</p>
+                <p>Horario</p>
+                <p>Vagas Disponíveis</p>
+                <p>Motorista</p>
+                <a href="detalheCarona.jsp">Saiba Mais</a>
+            </div>
+            <div class="carona-card">
+                <h3>Carona</h3>
+                <p>Saída</p>
+                <p>Chegada</p>
+                <p>Data</p>
+                <p>Horario</p>
+                <p>Vagas Disponíveis</p>
+                <p>Motorista</p>
+                <a href="detalheCarona.jsp">Saiba Mais</a>
             </div>
             <div class="carona-card">
                 <h3>Carona</h3>
@@ -47,29 +67,9 @@
                 <p>Chegada</p>
                 <p>Data</p>
                 <p>Horario</p>
-                <p>Vagas DisponÃ­veis</p>
+                <p>Vagas Disponíveis</p>
                 <p>Motorista</p>
-                <a href="detalheCarona.html">Saiba Mais</a>
-            </div>
-            <div class="carona-card">
-                <h3>Carona</h3>
-                <p>SaÃ­da</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas DisponÃ­veis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.html">Saiba Mais</a>
-            </div>
-            <div class="carona-card">
-                <h3>Carona</h3>
-                <p>SaÃ­da</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas DisponÃ­veis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.html">Saiba Mais</a>
+                <a href="detalheCarona.jsp">Saiba Mais</a>
             </div>
         </div>
     </main>
