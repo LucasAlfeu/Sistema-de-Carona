@@ -1,6 +1,7 @@
 package br.ufrrj.si.DAO;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import br.ufrrj.si.connection.Conexao;
@@ -31,5 +32,28 @@ public class UsuarioDAO {
 	            e.printStackTrace();
 	        }
 		}
+	
+	public Usuario buscarUsuario(String usuario, String senha) {
+		String sql = "SELECT * FROM usuario WHERE usuario = ? AND senha = ?";
+		try{
+			PreparedStatement ps = Conexao.getConexao().prepareStatement(sql);
+			ps.setString(1, usuario);
+			ps.setString(2, senha);
+			ResultSet rs = ps.executeQuery();
+			Usuario u = new Usuario();
+			rs.next();
+			u.setUsuario(rs.getString("usuario"));
+			u.setSenha(rs.getString("senha"));
+			u.setNome(rs.getString("nome"));
+			u.setCpf(rs.getString("cpf"));
+			u.setTelefone(rs.getString("telefone"));
+
+			return u;
+		}
+		catch (Exception e){
+			System.out.println("Erro ao buscar usuario: " + e.getMessage());
+			return null;
+		}
+	}
 }
 

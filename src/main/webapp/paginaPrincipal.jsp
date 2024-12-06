@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="br.ufrrj.si.model.Usuario" %>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +18,14 @@
         </nav>
     </header>
     <main>
+    <%Usuario nome = (Usuario) session.getAttribute("user");%>
+
+	<%if (nome == null) { %>
+	
+	<% response.sendRedirect("index.jsp"); %>
+	<% }else { %>
+	<%="Olá " + nome.getUsuario()+ " " + nome.getCpf() %>
+	<% }%>
         <h1>Carona</h1>
         <div class="search-form">
             <div class="box">

@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Entrar</h1>
-        <form>
+        <form action="Logar" method="POST">
             <label for="username">Usuário:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Senha:</label>
