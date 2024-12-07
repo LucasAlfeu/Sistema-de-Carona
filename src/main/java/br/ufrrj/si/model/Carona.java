@@ -15,7 +15,7 @@ public class Carona {
 		
 	}
 	
-	public Carona(String s, String c, String h, int val, int vag,String car, String d){
+	public Carona(String s, String c, String h, float val, int vag,String car, String d){
 		this.saida = s;
 		this.chegada = c;
 		this.horario = h;
