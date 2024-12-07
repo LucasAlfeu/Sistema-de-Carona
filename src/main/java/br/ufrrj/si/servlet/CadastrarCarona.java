@@ -42,7 +42,7 @@ public class CadastrarCarona extends HttpServlet {
 		String chegada = request.getParameter("chegada");
 		String dataCarona = request.getParameter("data");
 		String horario = request.getParameter("horario");
-		int valor = Integer.parseInt(request.getParameter("valor"));
+		float valor = Float.parseFloat(request.getParameter("valor"));
 		int vagas = Integer.parseInt(request.getParameter("vagas"));
 		String carro = request.getParameter("veiculo");
 		
