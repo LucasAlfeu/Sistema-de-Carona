@@ -18,12 +18,15 @@
     </header>
     <main>
         <h1>Cadastrar Carona</h1>
-        <form>
+        <form action="cadastrarCarona.do" method="POST">
             <label class="label-form" for="saida">Saída:</label>
             <input type="text" id="saida" name="saida" required>
 
             <label class="label-form" for="chegada">Chegada:</label>
             <input type="text" id="chegada" name="chegada" required>
+            
+		    <label for="data">Data:</label>
+		    <input type="date" id="data" name="data" required>
 
             <label class="label-form" for="horario">Horário:</label>
             <input type="time" id="horario" name="horario" required>

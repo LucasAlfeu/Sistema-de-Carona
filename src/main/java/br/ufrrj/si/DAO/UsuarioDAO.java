@@ -42,6 +42,7 @@ public class UsuarioDAO {
 			ResultSet rs = ps.executeQuery();
 			Usuario u = new Usuario();
 			rs.next();
+			u.setIdUsuario(rs.getInt("ID_usuario"));
 			u.setUsuario(rs.getString("usuario"));
 			u.setSenha(rs.getString("senha"));
 			u.setNome(rs.getString("nome"));

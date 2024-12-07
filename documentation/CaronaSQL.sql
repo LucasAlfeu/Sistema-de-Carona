@@ -21,21 +21,16 @@ CREATE TABLE IF NOT EXISTS Automovel (
     FOREIGN KEY (fk_Usuario_ID_usuario) REFERENCES Usuario(ID_usuario)
 );
 
-CREATE TABLE IF NOT EXISTS Trajeto (
-    ID_trajeto INT PRIMARY KEY AUTO_INCREMENT,
-    saida VARCHAR(200) NOT NULL,
-    chegada VARCHAR(200) NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS Carona (
     ID_carona INT PRIMARY KEY AUTO_INCREMENT,
-    horaSaida VARCHAR(10) NOT NULL,
-    horaChegada VARCHAR(10) NOT NULL,
+    saida VARCHAR(50) NOT NULL,
+    chegada VARCHAR(50) NOT NULL,
+    dataCarona VARCHAR(20) NOT NULL,
+    horario VARCHAR(5) NOT NULL,
     valor DECIMAL(10, 2) NOT NULL,
     vagas INT NOT NULL,
-    fk_Trajeto_ID_Trajeto INT NOT NULL,
+    carro VARCHAR(20),
     fk_Usuario_ID_usuario INT NOT NULL,
-    FOREIGN KEY (fk_Trajeto_ID_Trajeto) REFERENCES Trajeto(ID_trajeto),
     FOREIGN KEY (fk_Usuario_ID_usuario) REFERENCES Usuario(ID_usuario)
 );
 

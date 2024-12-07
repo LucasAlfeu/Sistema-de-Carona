@@ -44,7 +44,7 @@ public class Logar extends HttpServlet {
         Usuario u = usuarioDAO.buscarUsuario(usuario, senha);
 
         HttpSession session = request.getSession();
-
+        session.setMaxInactiveInterval(1800);
         session.setAttribute("user", u);
         response.sendRedirect("http://localhost:8080/Sistema-de-Carona/paginaPrincipal.jsp");
 
