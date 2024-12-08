@@ -10,15 +10,15 @@
     <header>
         <nav>
             <ul>
-                <li><a href="paginaPrincipal.html">Início</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="paginaPrincipal.jsp">Início</a></li>
+                <li><a href="perfil.jsp">Perfil</a></li>
+                <li><a href="index.jsp">Sair</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Cadastrar Carro</h1>
-        <form>
+        <form action ="CadastrarAutomovel.do" method="POST">
             <label for="placa">Placa:</label>
             <input type="text" id="placa" name="placa" required>
             <label for="modelo">Modelo:</label>

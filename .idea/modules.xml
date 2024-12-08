@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Sistema_de_Carona.iml" filepath="$PROJECT_DIR$/.idea/Sistema_de_Carona.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabAPS/Sistema_de_Carona.iml" filepath="$PROJECT_DIR$/TrabAPS/Sistema_de_Carona.iml" />
     </modules>
   </component>
 </project>

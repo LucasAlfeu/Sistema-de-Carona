@@ -1,8 +1,4 @@
 <%@ page import="model.Usuario" %>
-<%@ page import="model.Carona" %>
-<%@ page import="java.util.List" %>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,9 +24,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="paginaPrincipal.html">Início</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="paginaPrincipal.jsp">Início</a></li>
+                <li><a href="perfil.jsp">Perfil</a></li>
+                <li><a href="index.jsp">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -42,42 +38,53 @@
                 <input type="text" name="destino"placeholder="Destino">
                 <input type="text" name="data" placeholder="Data">
                 <input type="number" name="vagas" placeholder="Vagas">
-                <div class="box-button">
-                    <a href="cadastrarCarona.jsp"><button>Oferecer Carona</button></a>
-                    <button type="submit">Buscar</button>
-                </div>
             </form>
-
-        </div>
-        <div class="carona-container">
-            <%
-                // Recuperar a lista da sessão
-                List<Carona> minhaLista = (List<Carona>) session.getAttribute("caronas");
-                if (minhaLista != null) {
-                    for (Carona item : minhaLista) {
-            %>
-            <div class="carona-card">
-                <h3>Caronas</h3>
-                <p>ID: <%=item.getIdCarona()%></p>
-                <p>Chegada: <%=item.getChegada()%></p>
-                <p>Saída: <%=item.getSaida()%></p>
-                <p>Data: <%=item.getDataCarona()%></p>
-                <p>Valor: R$ <%=item.getValor()%></p>
-                <p>Usuário: <%=item.getIdUsuario()%></p>
-                <a href="detalheCarona.jsp">Saiba Mais</a>
+            <div class="box-button">
+                <button>Oferecer Carona</button>
+                <button>Buscar</button>
             </div>
-            <%
-                }
-            } else {
-            %>
-            <div class="carona-card">
-                <p>Nenhum item encontrado na lista.</p>
-            </div>
-            <%
-                }
-            %>
         </div>
-
+        <div class="caronas">
+            <div class="carona-card">
+                <h3>Carona</h3>
+                <p>Saída</p>
+                <p>Chegada</p>
+                <p>Data</p>
+                <p>Horario</p>
+                <p>Vagas Disponíveis</p>
+                <p>Motorista</p>
+                <a href="detalheCarona.html">Saiba Mais</a>
+            </div>
+            <div class="carona-card">
+                <h3>Carona</h3>
+                <p>Saída</p>
+                <p>Chegada</p>
+                <p>Data</p>
+                <p>Horario</p>
+                <p>Vagas Disponíveis</p>
+                <p>Motorista</p>
+                <a href="detalheCarona.html">Saiba Mais</a>
+            </div>
+            <div class="carona-card">
+                <h3>Carona</h3>
+                <p>Saída</p>
+                <p>Chegada</p>
+                <p>Data</p>
+                <p>Horario</p>
+                <p>Vagas Disponíveis</p>
+                <p>Motorista</p>
+                <a href="detalheCarona.html">Saiba Mais</a>
+            </div>
+            <div class="carona-card">
+                <h3>Carona</h3>
+                <p>Saída</p>
+                <p>Chegada</p>
+                <p>Data</p>
+                <p>Horario</p>
+                <p>Vagas Disponíveis</p>
+                <p>Motorista</p>
+                <a href="detalheCarona.html">Saiba Mais</a>
+            </div>
         </div>
     </main>
 </body>
