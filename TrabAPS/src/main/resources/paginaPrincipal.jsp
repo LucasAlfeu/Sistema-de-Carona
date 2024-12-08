@@ -35,7 +35,7 @@
         <div class="search-form">
             <form action="BuscarCarona" method="POST" class="box">
                 <input type="text" name="origem" placeholder="Origem">
-                <input type="text" name="destino"placeholder="Destino">
+                <input type="text" name="destino" placeholder="Destino">
                 <input type="text" name="data" placeholder="Data">
                 <input type="number" name="vagas" placeholder="Vagas">
             </form>
