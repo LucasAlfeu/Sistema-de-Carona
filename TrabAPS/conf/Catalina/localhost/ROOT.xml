@@ -37,5 +37,6 @@
     <PostResources base="C:/Users/Usuario/.m2/repository/org/jboss/logging/jboss-logging-annotations/2.2.1.Final/jboss-logging-annotations-2.2.1.Final.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jboss-logging-annotations-2.2.1.Final.jar"/>
     <PostResources base="C:/Users/Usuario/.m2/repository/org/jboss/jdeparser/jdeparser/2.0.3.Final/jdeparser-2.0.3.Final.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jdeparser-2.0.3.Final.jar"/>
     <PostResources base="C:/Users/Usuario/.m2/repository/org/jboss/classfilewriter/jboss-classfilewriter/1.3.0.Final/jboss-classfilewriter-1.3.0.Final.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jboss-classfilewriter-1.3.0.Final.jar"/>
+    <PostResources base="C:/Users/Usuario/Desktop/Documents/Aulas/Análise e Projeto de Sistemas/Sistema_de_Carona/TrabAPS/lib/jstl-1.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jstl-1.2.jar"/>
   </Resources>
 </Context>

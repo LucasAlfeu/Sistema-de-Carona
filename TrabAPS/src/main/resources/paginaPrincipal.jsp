@@ -1,4 +1,8 @@
 <%@ page import="model.Usuario" %>
+<%@ page import="model.Carona" %>
+<%@ page import="java.util.List" %>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,53 +42,44 @@
                 <input type="text" name="destino"placeholder="Destino">
                 <input type="text" name="data" placeholder="Data">
                 <input type="number" name="vagas" placeholder="Vagas">
+                <input type="submit" name="search">
             </form>
             <div class="box-button">
-                <button>Oferecer Carona</button>
-                <button>Buscar</button>
+                <a href="cadastrarCarona.jsp"><button>Oferecer Carona</button></a>
+                <button type="submit">Buscar</button>
             </div>
         </div>
         <div class="caronas">
             <div class="carona-card">
-                <h3>Carona</h3>
-                <p>Saída</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
+                <%
+                    // Recuperar a lista da sessão
+                    List<Carona> minhaLista = (List<Carona>) session.getAttribute("caronas");
+                    if (minhaLista != null) {
+                        for (Carona item : minhaLista) {
+                %>
+                <h3>Caronas</h3>
+                <p><%=item.getIdCarona()%></p>
+                <p><%=item.getChegada()%></p>
+                <p><%=item.getSaida()%></p>
+                <p><%=item.getDataCarona()%></p>
+                <p><%=item.getValor()%></p>
+                <p><%=item.getIdUsuario()%></p>
                 <a href="detalheCarona.html">Saiba Mais</a>
+
+                <%
+                    }
+                } else {
+                %>
+                <li>Nenhum item encontrado na lista.</li>
+                <%
+                    }
+                %>
+
+
+
+
             </div>
-            <div class="carona-card">
-                <h3>Carona</h3>
-                <p>Saída</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.html">Saiba Mais</a>
-            </div>
-            <div class="carona-card">
-                <h3>Carona</h3>
-                <p>Saída</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.html">Saiba Mais</a>
-            </div>
-            <div class="carona-card">
-                <h3>Carona</h3>
-                <p>Saída</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.html">Saiba Mais</a>
-            </div>
+
         </div>
     </main>
 </body>

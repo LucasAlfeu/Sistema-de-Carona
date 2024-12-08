@@ -49,7 +49,7 @@ public class CadastrarUsuario extends HttpServlet {
 		u.setNome(nome);
 		u.setCpf(cpf);
 		u.setTelefone(telefone);
-		
+
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		
 		usuarioDAO.cadastrarUsuario(u);

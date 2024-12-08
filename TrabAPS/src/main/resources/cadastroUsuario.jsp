@@ -22,7 +22,7 @@
             <input type="tel" id="telefone" name="telefone" required>
             <div class="box">
                 <button type="submit">Cadastrar</button>
-                <a href="index.html">Cancelar</a>
+                <a href="index.jsp">Cancelar</a>
             </div>
         </form>
     </div>
