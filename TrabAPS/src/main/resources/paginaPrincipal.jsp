@@ -42,43 +42,41 @@
                 <input type="text" name="destino"placeholder="Destino">
                 <input type="text" name="data" placeholder="Data">
                 <input type="number" name="vagas" placeholder="Vagas">
-                <input type="submit" name="search">
+                <div class="box-button">
+                    <a href="cadastrarCarona.jsp"><button>Oferecer Carona</button></a>
+                    <button type="submit">Buscar</button>
+                </div>
             </form>
-            <div class="box-button">
-                <a href="cadastrarCarona.jsp"><button>Oferecer Carona</button></a>
-                <button type="submit">Buscar</button>
-            </div>
+
         </div>
-        <div class="caronas">
+        <div class="carona-container">
+            <%
+                // Recuperar a lista da sessão
+                List<Carona> minhaLista = (List<Carona>) session.getAttribute("caronas");
+                if (minhaLista != null) {
+                    for (Carona item : minhaLista) {
+            %>
             <div class="carona-card">
-                <%
-                    // Recuperar a lista da sessão
-                    List<Carona> minhaLista = (List<Carona>) session.getAttribute("caronas");
-                    if (minhaLista != null) {
-                        for (Carona item : minhaLista) {
-                %>
                 <h3>Caronas</h3>
-                <p><%=item.getIdCarona()%></p>
-                <p><%=item.getChegada()%></p>
-                <p><%=item.getSaida()%></p>
-                <p><%=item.getDataCarona()%></p>
-                <p><%=item.getValor()%></p>
-                <p><%=item.getIdUsuario()%></p>
-                <a href="detalheCarona.html">Saiba Mais</a>
-
-                <%
-                    }
-                } else {
-                %>
-                <li>Nenhum item encontrado na lista.</li>
-                <%
-                    }
-                %>
-
-
-
-
+                <p>ID: <%=item.getIdCarona()%></p>
+                <p>Chegada: <%=item.getChegada()%></p>
+                <p>Saída: <%=item.getSaida()%></p>
+                <p>Data: <%=item.getDataCarona()%></p>
+                <p>Valor: R$ <%=item.getValor()%></p>
+                <p>Usuário: <%=item.getIdUsuario()%></p>
+                <a href="detalheCarona.jsp">Saiba Mais</a>
             </div>
+            <%
+                }
+            } else {
+            %>
+            <div class="carona-card">
+                <p>Nenhum item encontrado na lista.</p>
+            </div>
+            <%
+                }
+            %>
+        </div>
 
         </div>
     </main>
