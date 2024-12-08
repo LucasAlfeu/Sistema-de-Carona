@@ -46,10 +46,6 @@ public class Logar extends HttpServlet {
 
         Usuario u = usuarioDAO.buscarUsuario(usuario, senha);
 
-
-
-
-
         HttpSession session = request.getSession();
 
         session.setAttribute("user", u);

@@ -2543,3 +2543,43 @@
  java.base/java.lang.Thread.run(Thread.java:1570)
 06-Dec-2024 17:13:08.684 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
 06-Dec-2024 17:13:08.717 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+06-Dec-2024 18:51:04.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-22
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           22.0.2+9-70
+06-Dec-2024 18:51:04.379 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+06-Dec-2024 18:51:04.380 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Usuario\Desktop\Documents\Aulas\Análise e Projeto de Sistemas\Sistema_de_Carona\TrabAPS
+06-Dec-2024 18:51:04.380 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Usuario\Documents\tomcat\apache-tomcat-10.1.30
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Usuario\Documents\tomcat\apache-tomcat-10.1.30
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Usuario\Desktop\Documents\Aulas\Análise e Projeto de Sistemas\Sistema_de_Carona\TrabAPS
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Usuario\Desktop\Documents\Aulas\Análise e Projeto de Sistemas\Sistema_de_Carona\TrabAPS\temp
+06-Dec-2024 18:51:04.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Usuario\Desktop\Documents\Aulas\Análise e Projeto de Sistemas\Sistema_de_Carona\TrabAPS\conf\logging.properties
+06-Dec-2024 18:51:04.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+06-Dec-2024 18:51:04.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=55150:C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.3\bin
+06-Dec-2024 18:51:04.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+06-Dec-2024 18:51:04.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+06-Dec-2024 18:51:04.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+06-Dec-2024 18:51:04.395 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+06-Dec-2024 18:51:04.401 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+06-Dec-2024 18:51:04.744 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+06-Dec-2024 18:51:04.767 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [697] milliseconds
+06-Dec-2024 18:51:04.838 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+06-Dec-2024 18:51:04.838 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+06-Dec-2024 18:51:04.856 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Usuario\Desktop\Documents\Aulas\Análise e Projeto de Sistemas\Sistema_de_Carona\TrabAPS\conf\Catalina\localhost\ROOT.xml]
+06-Dec-2024 18:51:11.632 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Dec-2024 18:51:11.819 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Usuario\Desktop\Documents\Aulas\Análise e Projeto de Sistemas\Sistema_de_Carona\TrabAPS\conf\Catalina\localhost\ROOT.xml] has finished in [6,963] ms
+06-Dec-2024 18:51:11.824 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+06-Dec-2024 18:51:11.852 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7083] milliseconds
+06-Dec-2024 18:56:07.980 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+06-Dec-2024 18:56:07.985 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+06-Dec-2024 18:56:08.002 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+06-Dec-2024 18:56:08.020 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

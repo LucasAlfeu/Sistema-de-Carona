@@ -33,12 +33,12 @@
     <main>
         <h1>Carona</h1>
         <div class="search-form">
-            <div class="box">
-                <input type="text" placeholder="Origem">
-                <input type="text" placeholder="Destino">
-                <input type="date" placeholder="Data">
-                <input type="number" placeholder="Vagas">
-            </div>
+            <form action="BuscarCarona" method="POST" class="box">
+                <input type="text" name="origem" placeholder="Origem">
+                <input type="text" name="destino"placeholder="Destino">
+                <input type="text" name="data" placeholder="Data">
+                <input type="number" name="vagas" placeholder="Vagas">
+            </form>
             <div class="box-button">
                 <button>Oferecer Carona</button>
                 <button>Buscar</button>
