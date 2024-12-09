@@ -41,11 +41,12 @@ public class BuscarCarona extends HttpServlet {
         String destino = request.getParameter("destino");
         String data = request.getParameter("data");
 
+
         CaronaDAO caronaDAO = new CaronaDAO();
 
         List<Carona> caronas = caronaDAO.buscarCarona(origem, destino, data);
 
-        //HttpSession session = request.getSession(false);
+       
         request.setAttribute("caronas", caronas);
         RequestDispatcher dispatcher = request.getRequestDispatcher("paginaPrincipal.jsp");
         dispatcher.forward(request, response);

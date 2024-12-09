@@ -20,22 +20,44 @@
     </header>
     <main>
 	<%
-			
+			Usuario usuario = (Usuario) session.getAttribute("user");
 		    Carona carona = (Carona) request.getAttribute("carona");
 			Usuario motorista = (Usuario) request.getAttribute("motorista");
 		    if (carona != null && motorista != null) {
 		    	String dataFormatada = carona.formatarData(carona.getDataCarona());
 	%>
         <h1>Solicitar Carona</h1>
-        <form action="" class="form-container" method="POST">
+        <form action="SolicitarCarona" class="form-container" method="POST">
             <p><strong>Motorista:</strong> <%= motorista.getNome() %></p>
+            
+            
             <p><strong>Embarque:</strong> <%= carona.getSaida() %></p>
+            <input type="hidden" name="embarque" value="<%= carona.getSaida() %>">
+            
             <p><strong>Desembarque:</strong> <%= carona.getChegada() %></p>
+            <input type="hidden" name="desembarque" value="<%= carona.getChegada() %>">
+            
             <p><strong>Data da Carona:</strong> <%= dataFormatada %></p>
+            <input type="hidden" name="data" value="<%= carona.getDataCarona() %>">
+            
             <p><strong>Horário de Saída:</strong> <%= carona.getHorario() %></p>
+            <input type="hidden" name="horario" value="<%= carona.getHorario() %>">
+            
             <p><strong>Contato Motorista:</strong> <%= motorista.getTelefone() %></p>
+            <input type="hidden" name="contatoMotorista" value="<%= motorista.getTelefone() %>">
+            
             <p><strong>Número de Vagas:</strong><%= carona.getVagas() %></p>
+            
             <p><strong>Valor:</strong> R$ <%= carona.getValor() %></p>
+            <input type="hidden" name="valor" value="<%= carona.getValor() %>">
+            
+            <p><strong>Vagas Desejadas</strong></p>
+            <input type="number" name="vagasDesejadas" placeholder="Vagas">
+            
+            <input type="hidden" name="idUsuario" value="<%= usuario.getIdUsuario() %>">
+            <input type="hidden" name="idCarona" value="<%= carona.getIdCarona() %>">
+            
+            
             <button type="submit">Solicitar Carona</button>
         </form>
       <% } else { %>

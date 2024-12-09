@@ -81,7 +81,6 @@
                     <th>Desembarque</th>
                     <th>Data</th>
                     <th>Status</th>
-                    <th>Detalhes</th>
                 </tr>
             </thead>
             <tbody>
@@ -96,7 +95,6 @@
                     <td><%= s.getDesembarque() %></td>
                     <td><%= dataFormatada %></td>
                     <td><% if(s.getConfirmado()){%><p>Confirmada</p> <%} else {%> <p>Solicitada</p><%} %></td>
-                    <td><a href="BuscaDetalhesCaronaPerfil?id=<%= s.getID_Pedido() %>">Saiba mais</a></td>
                 </tr>
                             <%
              		}
@@ -105,7 +103,6 @@
                     <td> - </td>
                     <td> - </td>
                     <td> - </td>
-                    <td><a href="#">Saiba mais</a></td>
             <%
                 }
             %>

@@ -50,8 +50,13 @@
                     	UsuarioDAO uDAO = new UsuarioDAO();
                     	Usuario u = uDAO.buscarUsuarioPorId(s.getIdUsuario());
                     %>
-                    <p><%= u.getNome() %> </p>
-                    <button>Aceitar Pedido</button>
+                    <p><%= u.getNome() %> </p></br>
+                    <p><%= s.getConfirmado() ? "Confirmado" : "Solicitado" %></p>
+                    <form action="ConfirmaCarona" method="POST">
+					    <input type="hidden" name="idSolicitacao" value="<%= s.getID_Pedido() %>">
+					    <input type="hidden" name="idCarona" value="<%= carona.getIdCarona() %>">
+					    <button type="submit">Aceitar Pedido</button>
+					</form>
                 </li>
             <%
              		}

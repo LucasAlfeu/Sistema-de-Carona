@@ -18,12 +18,13 @@ public class SolicitacaoCarona {
     	
     }
 
-    public SolicitacaoCarona (String embarque, String desembarque, String data, int vagasDesejadas, boolean confirmado, int idUsuario) {
+    public SolicitacaoCarona (String embarque, String desembarque, String data, int vagasDesejadas, int idUsuario, int idCarona) {
         this.embarque = embarque;
         this.desembarque = desembarque;
         this.data = data;
         this.vagasDesejadas = vagasDesejadas;
         this.idUsuario = idUsuario;
+        this.idCarona = idCarona;
         this.confirmado = false;
     }
 

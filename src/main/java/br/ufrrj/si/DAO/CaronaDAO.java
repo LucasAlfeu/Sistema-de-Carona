@@ -129,8 +129,25 @@ public class CaronaDAO {
     	} catch(SQLException e) {
     		System.out.println("Erro: "+e.getMessage());
     	}
-		return null;
-    	
-    	
+		return null;  		
     }
+    
+    public void atualizaVagas(int id, int newVagas) throws ClassNotFoundException {
+            String sql = "UPDATE carona SET vagas = ? WHERE ID_carona = ?";
+
+            try {
+            	PreparedStatement ps = null;
+
+                ps = Conexao.getConexao().prepareStatement(sql);
+
+                ps.setInt(1, newVagas);
+                ps.setInt(2, id);
+
+                int rowsAffected = ps.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Erro ao atualizar o número de vagas", e);
+            }
+        }
 }

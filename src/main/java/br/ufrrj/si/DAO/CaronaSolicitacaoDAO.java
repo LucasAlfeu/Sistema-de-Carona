@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CaronaSolicitacaoDAO {
         public void registrarSolicitacaoCarona(SolicitacaoCarona solicitacao) {
-        String insertRideRequestQuery = "INSERT INTO pedido (embarque, desembarque, data, vagasDesejadas, confirmado, fk_Usuario_ID_usuaria, fk_Carona_ID_Carona) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String insertRideRequestQuery = "INSERT INTO pedido (embarque, desembarque, data, vagasDesejadas, confirmado, fk_Usuario_ID_usuario, fk_Carona_ID_Carona) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (
                 PreparedStatement statement = Conexao.getConexao().prepareStatement(insertRideRequestQuery)) {
@@ -22,7 +22,7 @@ public class CaronaSolicitacaoDAO {
             statement.setInt(4, solicitacao.getVagasDesejadas());
             statement.setBoolean(5, false); // Inicialmente, a solicitação não está confirmada
             statement.setLong(6, solicitacao.getIdUsuario());
-            statement.setLong(7, 0L); // Inicialmente, não há uma carona associada
+            statement.setLong(7, solicitacao.getIdCarona()); // Inicialmente, não há uma carona associada
 
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -122,6 +122,50 @@ public class CaronaSolicitacaoDAO {
             return null;
 
 
+        }
+    }
+    
+    public SolicitacaoCarona buscarSolicitacaoPorId(int idSolicitacao) {
+    	String sql = "SELECT * FROM pedido WHERE ID_Pedido = ?";
+    	try{
+			PreparedStatement ps = Conexao.getConexao().prepareStatement(sql);
+			ps.setInt(1, idSolicitacao);
+			ResultSet rs = ps.executeQuery();
+			SolicitacaoCarona c = new SolicitacaoCarona();
+			rs.next();
+			c.setID_Pedido(rs.getInt("ID_Pedido"));
+			c.setEmbarque(rs.getString("embarque"));
+			c.setDesembarque(rs.getString("desembarque"));
+			c.setData(rs.getString("data"));
+			c.setVagasDesejadas(rs.getInt("vagasDesejadas"));
+			c.setConfirmado(rs.getBoolean("confirmado"));
+			c.setIdUsuario(rs.getInt("fk_Usuario_ID_usuario"));
+			c.setIdCarona(rs.getInt("fk_Carona_ID_Carona"));
+
+			return c;
+		}
+		catch (Exception e){
+			System.out.println("Erro ao buscar usuario: " + e.getMessage());
+			return null;
+		}
+    }
+    
+    public void atualizaStatusSolicitacao(int id) throws ClassNotFoundException {
+        String sql = "UPDATE pedido SET confirmado = ? WHERE ID_Pedido = ?";
+
+        try {
+        	PreparedStatement ps = null;
+
+            ps = Conexao.getConexao().prepareStatement(sql);
+
+            ps.setBoolean(1, true);
+            ps.setInt(2, id);
+            
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Erro ao atualizar o número de vagas", e);
         }
     }
 }
