@@ -56,5 +56,29 @@ public class UsuarioDAO {
 			return null;
 		}
 	}
+	
+	public Usuario buscarUsuarioPorId( int id) {
+		String sql = "SELECT * FROM usuario WHERE ID_usuario = ? ";
+		
+		try{
+			PreparedStatement ps = Conexao.getConexao().prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			Usuario u = new Usuario();
+			rs.next();
+			u.setIdUsuario(rs.getInt("ID_usuario"));
+			u.setUsuario(rs.getString("usuario"));
+			u.setSenha(rs.getString("senha"));
+			u.setNome(rs.getString("nome"));
+			u.setCpf(rs.getString("cpf"));
+			u.setTelefone(rs.getString("telefone"));
+
+			return u;
+		}
+		catch (Exception e){
+			System.out.println("Erro ao buscar usuario: " + e.getMessage());
+			return null;
+		}
+	}
 }
 

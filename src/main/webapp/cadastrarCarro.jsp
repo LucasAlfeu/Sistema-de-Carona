@@ -18,7 +18,7 @@
     </header>
     <main>
         <h1>Cadastrar Carro</h1>
-        <form>
+        <form action ="cadastrarAutomovel.do" method="POST">
             <label for="placa">Placa:</label>
             <input type="text" id="placa" name="placa" required>
             <label for="modelo">Modelo:</label>

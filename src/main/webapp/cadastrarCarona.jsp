@@ -1,3 +1,7 @@
+<%@ page import="br.ufrrj.si.model.*" %>
+<%@ page import="br.ufrrj.si.DAO.*" %>
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,6 +11,8 @@
     <link rel="stylesheet" href="styles/cadastroCarona.css">
 </head>
 <body>
+		<%Usuario usuario = (Usuario) session.getAttribute("user");%>
+		<%AutomovelDAO autoDAO = new AutomovelDAO(); %>
     <header>
         <nav>
             <ul>
@@ -39,19 +45,26 @@
             
             <label  class="label-form">Selecionar Veículo:</label>
             <div class="box">
-                <div class="box1">
-                    <input type="radio" id="veiculo1" name="veiculo" value="veiculo1" checked>
-                    <label for="veiculo1">Veículo 1</label>
-                </div>
-                <div class="box1">
-                    <input type="radio" id="veiculo2" name="veiculo" value="veiculo2">
-                    <label for="veiculo1">Veículo 2</label>
-                </div>
-                <div class="box1">
-                    <input type="radio" id="veiculo3" name="veiculo" value="veiculo3">
-                    <label for="veiculo1">Veículo 3</label>
-                </div>
-
+				<%
+				    List<Automovel> minhaLista = autoDAO.buscaAutomoveisPorIdUsuario(usuario.getIdUsuario());
+				    if (minhaLista != null) {
+				        int contador = 1; // Contador para IDs únicos
+				        for (Automovel item : minhaLista) {
+				            String modelo = (item.getModelo() != null) ? item.getModelo() : "Sem Modelo";
+				%>
+				            <div class="box1">
+				                <input type="radio" id="veiculo1" name="veiculo" value="<%= modelo %>" >
+				                <label for="veiculo1"><%= modelo %></label>
+				            </div>
+				<%
+				            contador++; // Incrementa o contador
+				        }
+				    } else {
+				%>
+				    <p>Nenhum automóvel encontrado.</p>
+				<%
+				    }
+				%>
             </div>
             <div class="box2">
                 <button type="submit">Cadastrar</button>

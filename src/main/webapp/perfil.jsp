@@ -1,3 +1,8 @@
+<%@ page import="br.ufrrj.si.model.*" %>
+<%@ page import="br.ufrrj.si.DAO.*" %>
+<%@ page import="java.util.List" %>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,27 +22,93 @@
         </nav>
     </header>
     <main>
+    
+    	<%Usuario usuario = (Usuario) session.getAttribute("user");%>    	
+    	<%CaronaDAO caronaDAO = new CaronaDAO(); %>
+    	<%CaronaSolicitacaoDAO caronaSDAO = new CaronaSolicitacaoDAO(); %>
+    	
         <h1>Perfil</h1>
         <div class="box">
-            <p>Nome do Usuário</p>
-            <button class="">Cadastrar Carro</button>
+            <p><%= usuario.getNome() %></p>
+            <a href="cadastrarCarro.jsp">Cadastrar Carro</a>
         </div>
+        <h2>Caronas Oferecidas</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Carona</th>
-                    <th>Data</th>
                     <th>Origem</th>
+                    <th>Destino</th>
+                    <th>Data</th>
                     <th>Detalhes</th>
                 </tr>
             </thead>
             <tbody>
+            <%
+                // Recuperar a lista da sessão
+                List<Carona> minhaLista = caronaDAO.buscarCaronaPorIdUsuario(usuario.getIdUsuario());
+                if (minhaLista != null) {
+                    for (Carona item : minhaLista) {
+                    	String dataFormatada = item.formatarData(item.getDataCarona());
+            %>
                 <tr>
-                    <td>Carona 01</td>
-                    <td>Data 01</td>
-                    <td>Origem</td>
-                    <td><button>Saiba mais</button></td>
+                    <td><%= item.getSaida() %></td>
+                    <td><%= item.getChegada() %></td>
+                    <td><%= dataFormatada %></td>
+                    <td><a href="BuscaDetalhesCaronaPerfil?id=<%= item.getIdCarona() %>">Saiba mais</a></td>
                 </tr>
+            <%
+             		}
+             	} else {
+            %>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td><a href="#">Saiba mais</a></td>
+            <%
+                }
+            %>
+                </tbody>
+        </table>
+        </br>
+        </br>
+        </br>
+        
+        <h2>Pedidos de Carona</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Embarque</th>
+                    <th>Desembarque</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            <tbody>
+            <%
+                List<SolicitacaoCarona> listaSolicitacoes = caronaSDAO.buscarSolicitacoesPorIdIsiario(usuario.getIdUsuario());
+                if (listaSolicitacoes != null) {
+                    for (SolicitacaoCarona s : listaSolicitacoes) {
+                    	String dataFormatada = s.formatarData(s.getData());
+            %>
+                <tr>
+                    <td><%= s.getEmbarque() %></td>
+                    <td><%= s.getDesembarque() %></td>
+                    <td><%= dataFormatada %></td>
+                    <td><% if(s.getConfirmado()){%><p>Confirmada</p> <%} else {%> <p>Solicitada</p><%} %></td>
+                    <td><a href="BuscaDetalhesCaronaPerfil?id=<%= s.getID_Pedido() %>">Saiba mais</a></td>
+                </tr>
+                            <%
+             		}
+             	} else {
+            %>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td><a href="#">Saiba mais</a></td>
+            <%
+                }
+            %>
                 </tbody>
         </table>
     </main>

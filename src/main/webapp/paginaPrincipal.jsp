@@ -1,5 +1,8 @@
-<!DOCTYPE html>
 <%@ page import="br.ufrrj.si.model.Usuario" %>
+<%@ page import="br.ufrrj.si.model.Carona" %>
+<%@ page import="java.util.List" %>
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -28,58 +31,44 @@
 	<% }%>
         <h1>Carona</h1>
         <div class="search-form">
-            <div class="box">
-                <input type="text" placeholder="Origem">
-                <input type="text" placeholder="Destino">
-                <input type="date" placeholder="Data">
-                <input type="number" placeholder="Vagas">
-            </div>
-            <div class="box-button">
-                <a href="cadastrarCarona.jsp">Oferecer Carona</a>
-                <button>Buscar</button>
-            </div>
+            <form action="BuscarCarona" method="POST" class="box">
+                <input type="text" name="origem" placeholder="Origem">
+                <input type="text" name="destino"placeholder="Destino">
+                <input type="date" name="data" placeholder="Data">
+                <input type="number" name="vagas" placeholder="Vagas">
+                <div class="box-button">
+                    <a href="cadastrarCarona.jsp">Oferecer Carona</a>
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
         </div>
         <div class="caronas">
+         <%
+                // Recuperar a lista da sessão
+                List<Carona> minhaLista = (List<Carona>) request.getAttribute("caronas");
+                if (minhaLista != null) {
+                    for (Carona item : minhaLista) {
+                    	String dataFormatada = item.formatarData(item.getDataCarona());
+            %>
             <div class="carona-card">
-                <h3>Carona</h3>
-                <p>Saída</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.jsp">Saiba Mais</a>
+                <h3 class="card-tite"><strong>Carona</strong></h3>
+                <p class="card-p"><strong class="card-strong">Embarque: </strong> <%=item.getSaida()%></p>
+                <p class="card-p"><strong class="card-strong">Desembarque: </strong> <%=item.getChegada()%></p>
+                <p class="card-p"><strong class="card-strong">Data: </strong> <%= dataFormatada %></p>
+                <p class="card-p"><strong class="card-strong">Valor: </strong> R$ <%=item.getValor()%></p>
+                <a href="BuscaDetalhes?id=<%= item.getIdCarona() %>" class="card-link">Saiba Mais</a>
             </div>
+             <%
+             		}
+             	} else {
+            %>
             <div class="carona-card">
-                <h3>Carona</h3>
-                <p>Saída</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.jsp">Saiba Mais</a>
+                <p>Nenhum item encontrado na lista.</p>
             </div>
-            <div class="carona-card">
-                <h3>Carona</h3>
-                <p>Saída</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.jsp">Saiba Mais</a>
-            </div>
-            <div class="carona-card">
-                <h3>Carona</h3>
-                <p>SaÃ­da</p>
-                <p>Chegada</p>
-                <p>Data</p>
-                <p>Horario</p>
-                <p>Vagas Disponíveis</p>
-                <p>Motorista</p>
-                <a href="detalheCarona.jsp">Saiba Mais</a>
-            </div>
+            <%
+                }
+            %>
+            
         </div>
     </main>
 </body>

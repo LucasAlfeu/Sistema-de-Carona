@@ -1,3 +1,5 @@
+<%@ page import="br.ufrrj.si.model.*" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,17 +19,28 @@
         </nav>
     </header>
     <main>
+	<%
+			
+		    Carona carona = (Carona) request.getAttribute("carona");
+			Usuario motorista = (Usuario) request.getAttribute("motorista");
+		    if (carona != null && motorista != null) {
+		    	String dataFormatada = carona.formatarData(carona.getDataCarona());
+	%>
         <h1>Solicitar Carona</h1>
-        <div class="form-container">
-            <p><strong>Motorista:</strong> Nome do motorista</p>
-            <p><strong>Embarque:</strong> Endereço de embarque</p>
-            <p><strong>Desembarque:</strong> Endereço de desembarque</p>
-            <p><strong>Data da Carona:</strong> data da carona</p>
-            <p><strong>Horário de Saída:</strong> 00:00</p>
-            <p><strong>Contato Motorista:</strong> 00000000-0000</p>
-            <p><strong>Número de Vagas:</strong> 4</p>
+        <form action="" class="form-container" method="POST">
+            <p><strong>Motorista:</strong> <%= motorista.getNome() %></p>
+            <p><strong>Embarque:</strong> <%= carona.getSaida() %></p>
+            <p><strong>Desembarque:</strong> <%= carona.getChegada() %></p>
+            <p><strong>Data da Carona:</strong> <%= dataFormatada %></p>
+            <p><strong>Horário de Saída:</strong> <%= carona.getHorario() %></p>
+            <p><strong>Contato Motorista:</strong> <%= motorista.getTelefone() %></p>
+            <p><strong>Número de Vagas:</strong><%= carona.getVagas() %></p>
+            <p><strong>Valor:</strong> R$ <%= carona.getValor() %></p>
             <button type="submit">Solicitar Carona</button>
-        </div>
+        </form>
+      <% } else { %>
+	    	<p>Carona não encontrada!</p>
+	  <% } %>
     </main>
 </body>
 </html>

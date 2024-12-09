@@ -1,12 +1,15 @@
 package br.ufrrj.si.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Carona {
 	private int idCarona;
 	private String saida;
 	private String chegada;
 	private String dataCarona;
 	private String horario;
-	private int valor;
+	private float valor;
 	private int vagas;
 	private String carro;
 	private int idUsuario;
@@ -57,11 +60,11 @@ public class Carona {
 		this.horario = horario;
 	}
 
-	public int getValor() {
+	public float getValor() {
 		return valor;
 	}
 
-	public void setValor(int valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
 	}
 
@@ -97,6 +100,19 @@ public class Carona {
 		this.dataCarona = dataCarona;
 	}
 	
-	
+    public String formatarData(String dateStr) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
+            
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Date date = inputFormat.parse(dateStr);
+
+            return outputFormat.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 	
 }
