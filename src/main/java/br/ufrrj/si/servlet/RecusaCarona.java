@@ -1,5 +1,10 @@
 package br.ufrrj.si.servlet;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -7,23 +12,18 @@ import br.ufrrj.si.DAO.CaronaDAO;
 import br.ufrrj.si.DAO.CaronaSolicitacaoDAO;
 import br.ufrrj.si.model.Carona;
 import br.ufrrj.si.model.SolicitacaoCarona;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ConfirmaCarona
+ * Servlet implementation class RecusaCarona
  */
-@WebServlet("/ConfirmaCarona")
-public class ConfirmaCarona extends HttpServlet {
+@WebServlet("/RecusaCarona")
+public class RecusaCarona extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConfirmaCarona() {
+    public RecusaCarona() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -65,15 +65,13 @@ public class ConfirmaCarona extends HttpServlet {
 		} else {
 			try {
 				caronaDAO.atualizaVagas(idCarona, solicitacao.getVagasDesejadas());
-				solicitacaoDAO.atualizaStatusSolicitacao(idSolicitacao, "Confirmada");
+				solicitacaoDAO.atualizaStatusSolicitacao(idSolicitacao, "Recusada");
 				response.sendRedirect("http://localhost:8080/Sistema-de-Carona/perfil.jsp");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		
 	}
 
 }

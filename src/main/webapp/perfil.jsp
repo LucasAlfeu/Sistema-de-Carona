@@ -94,7 +94,7 @@
                     <td><%= s.getEmbarque() %></td>
                     <td><%= s.getDesembarque() %></td>
                     <td><%= dataFormatada %></td>
-                    <td><% if(s.getConfirmado()){%><p>Confirmada</p> <%} else {%> <p>Solicitada</p><%} %></td>
+                    <td><%= s.getConfirmado() %></td>
                 </tr>
                             <%
              		}

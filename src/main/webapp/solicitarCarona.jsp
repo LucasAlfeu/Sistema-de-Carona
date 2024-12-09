@@ -41,15 +41,12 @@
             <input type="hidden" name="data" value="<%= carona.getDataCarona() %>">
             
             <p><strong>Horário de Saída:</strong> <%= carona.getHorario() %></p>
-            <input type="hidden" name="horario" value="<%= carona.getHorario() %>">
             
             <p><strong>Contato Motorista:</strong> <%= motorista.getTelefone() %></p>
-            <input type="hidden" name="contatoMotorista" value="<%= motorista.getTelefone() %>">
             
             <p><strong>Número de Vagas:</strong><%= carona.getVagas() %></p>
             
             <p><strong>Valor:</strong> R$ <%= carona.getValor() %></p>
-            <input type="hidden" name="valor" value="<%= carona.getValor() %>">
             
             <p><strong>Vagas Desejadas</strong></p>
             <input type="number" name="vagasDesejadas" placeholder="Vagas">

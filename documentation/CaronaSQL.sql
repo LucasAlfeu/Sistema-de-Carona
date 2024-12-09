@@ -34,20 +34,13 @@ CREATE TABLE IF NOT EXISTS Carona (
     FOREIGN KEY (fk_Usuario_ID_usuario) REFERENCES Usuario(ID_usuario)
 );
 
-CREATE TABLE IF NOT EXISTS Avaliacao (
-    ID_Avaliacao INT PRIMARY KEY AUTO_INCREMENT,
-    nota INT NOT NULL,
-    fk_Usuario_ID_usuario INT NOT NULL,
-    FOREIGN KEY (fk_Usuario_ID_usuario) REFERENCES Usuario(ID_usuario)
-);
-
 CREATE TABLE IF NOT EXISTS Pedido (
     ID_Pedido INT PRIMARY KEY AUTO_INCREMENT,
     embarque VARCHAR(100) NOT NULL,
     desembarque VARCHAR(100) NOT NULL,
     data DATE NOT NULL,
     vagasDesejadas INT NOT NULL,
-    confirmado BOOLEAN NOT NULL,
+    confirmado VARCHAR(20) NOT NULL,
     fk_Usuario_ID_usuario INT NOT NULL,
     fk_Carona_ID_Carona INT NOT NULL,
     FOREIGN KEY (fk_Usuario_ID_usuario) REFERENCES Usuario(ID_usuario),

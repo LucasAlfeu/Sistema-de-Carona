@@ -27,7 +27,7 @@ public class SolicitarCarona extends HttpServlet {
         String embarque = request.getParameter("embarque");
         String desembarque = request.getParameter("desembarque");
         String data = request.getParameter("data");
-        int vagasDesejadas = Integer.parseInt(request.getParameter("vagas"));
+        int vagasDesejadas = Integer.parseInt(request.getParameter("vagasDesejadas"));
         int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
         int idCarona = Integer.parseInt(request.getParameter("idCarona"));
 

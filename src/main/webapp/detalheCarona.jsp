@@ -51,13 +51,23 @@
                     	Usuario u = uDAO.buscarUsuarioPorId(s.getIdUsuario());
                     %>
                     <p><%= u.getNome() %> </p></br>
-                    <p><%= s.getConfirmado() ? "Confirmado" : "Solicitado" %></p>
+                    <p><%= s.getConfirmado() %></p>
+					<%
+						if(s.getConfirmado().equals("Solicitada")) {
+					%>
+					    <form action="RecusaCarona" method="POST">
+					    <input type="hidden" name="idSolicitacao" value="<%= s.getID_Pedido() %>">
+					    <input type="hidden" name="idCarona" value="<%= carona.getIdCarona() %>">
+					    <button type="submit">Recusar Pedido</button>
+					</form>
                     <form action="ConfirmaCarona" method="POST">
 					    <input type="hidden" name="idSolicitacao" value="<%= s.getID_Pedido() %>">
 					    <input type="hidden" name="idCarona" value="<%= carona.getIdCarona() %>">
 					    <button type="submit">Aceitar Pedido</button>
 					</form>
                 </li>
+                	<% } %>
+                	
             <%
              		}
              	} else {

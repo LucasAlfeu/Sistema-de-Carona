@@ -20,7 +20,7 @@ public class CaronaSolicitacaoDAO {
             statement.setString(2, solicitacao.getDesembarque());
             statement.setObject(3, solicitacao.getData());
             statement.setInt(4, solicitacao.getVagasDesejadas());
-            statement.setBoolean(5, false); // Inicialmente, a solicitação não está confirmada
+            statement.setString(5, "Solicitada"); // Inicialmente, a solicitação não está confirmada
             statement.setLong(6, solicitacao.getIdUsuario());
             statement.setLong(7, solicitacao.getIdCarona()); // Inicialmente, não há uma carona associada
 
@@ -45,7 +45,7 @@ public class CaronaSolicitacaoDAO {
                 String desembarque = resultSet.getString("desembarque");
                 String data = resultSet.getString("data");
                 int vagasDesejadas = resultSet.getInt("vagasDesejadas");
-                boolean confirmado = resultSet.getBoolean("confirmado");
+                String confirmado = resultSet.getString("confirmado");
                 int IdUsuario = resultSet.getInt("fk_Usuario_ID_usuaria");
                 int IdCarona = resultSet.getInt("fk_Carona_ID_Carona");
 
@@ -80,7 +80,7 @@ public class CaronaSolicitacaoDAO {
                 s.setDesembarque(rs.getString("desembarque"));
                 s.setData(rs.getString("data"));
                 s.setVagasDesejadas(rs.getInt("vagasDesejadas"));
-                s.setConfirmado(rs.getBoolean("confirmado"));
+                s.setConfirmado(rs.getString("confirmado"));
                 s.setIdUsuario(rs.getInt("fk_Usuario_ID_usuario"));
                 s.setIdCarona(rs.getInt("fk_Carona_ID_Carona"));
                 solicitacoes.add(s);
@@ -111,7 +111,7 @@ public class CaronaSolicitacaoDAO {
                 s.setDesembarque(rs.getString("desembarque"));
                 s.setData(rs.getString("data"));
                 s.setVagasDesejadas(rs.getInt("vagasDesejadas"));
-                s.setConfirmado(rs.getBoolean("confirmado"));
+                s.setConfirmado(rs.getString("confirmado"));
                 s.setIdUsuario(rs.getInt("fk_Usuario_ID_usuario"));
                 s.setIdCarona(rs.getInt("fk_Carona_ID_Carona"));
                 solicitacoes.add(s);
@@ -138,7 +138,7 @@ public class CaronaSolicitacaoDAO {
 			c.setDesembarque(rs.getString("desembarque"));
 			c.setData(rs.getString("data"));
 			c.setVagasDesejadas(rs.getInt("vagasDesejadas"));
-			c.setConfirmado(rs.getBoolean("confirmado"));
+			c.setConfirmado(rs.getString("confirmado"));
 			c.setIdUsuario(rs.getInt("fk_Usuario_ID_usuario"));
 			c.setIdCarona(rs.getInt("fk_Carona_ID_Carona"));
 
@@ -150,7 +150,7 @@ public class CaronaSolicitacaoDAO {
 		}
     }
     
-    public void atualizaStatusSolicitacao(int id) throws ClassNotFoundException {
+    public void atualizaStatusSolicitacao(int id, String status) throws ClassNotFoundException {
         String sql = "UPDATE pedido SET confirmado = ? WHERE ID_Pedido = ?";
 
         try {
@@ -158,7 +158,7 @@ public class CaronaSolicitacaoDAO {
 
             ps = Conexao.getConexao().prepareStatement(sql);
 
-            ps.setBoolean(1, true);
+            ps.setString(1, status);
             ps.setInt(2, id);
             
             ps.executeUpdate();
